@@ -1,4 +1,3 @@
-require 'pry'
 class RecipesController < ApplicationController
 
   def index
@@ -12,7 +11,6 @@ class RecipesController < ApplicationController
   end
 
   def create
-    binding.pry
     @recipe = Recipe.new(recipe_params)
     if !!@recipe.save then redirect_to recipe_path(@recipe)
     else render :new
